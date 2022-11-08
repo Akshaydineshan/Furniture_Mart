@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row mt-4">
+       <div class="col-md-3">
+            <img  style="width:350px;" src="{{selectedProduct.image}}" alt="">
+            
+       </div>
+
+       <div class="col-md-5 ms-4">
+        <div class="row"><h4>{{selectedProduct.title}}</h4></div>
+        <div class="row">{{selectedProduct.description}}</div>
+        <div class="row">{{selectedProduct.category}}</div>
+    </div>
+
+       <div class="col-md-3">
+           <div class="card text-center">
+            <div class="card-body x">
+                <div >status<span [ngStyle]="{'color':selectedProduct.status == 'Available'?'green':'red'}" >{{selectedProduct.status}}</span></div>
+                <div class="">Price:{{selectedProduct.prize}}</div>
+                <button style=" color:white" class="btn btn-warning form-control " (click)="addToCart(selectedProduct)">ADD To Cart</button>
+
+
+
+
+            </div>
+           </div>
+       </div>
+    </div>
+</div>

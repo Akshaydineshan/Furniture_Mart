@@ -1,0 +1,48 @@
+.links ul{
+    display:flex;
+    margin-right: 80px;
+    margin-top:13px;
+ 
+}
+.links ul li {
+    list-style: none;
+    margin-right:30px;
+    color:white;
+}
+.links ul li a{
+    text-decoration: none;
+    color:white;
+}
+.navbar-brand  a {
+text-decoration:none
+}
+.searching{
+    flex:1;
+    display:flex;
+    margin-left: 5%;
+    margin-right:5%;
+
+}
+.searching input{
+    flex:1;
+    height:38px;
+    width:200px;
+    border-radius: 7px;
+
+    
+}
+.navbar{
+    background-color: black;
+    color:white;
+}
+li a:focus{
+    background-color: rgba(14, 14, 14, 0.923);
+    border-radius: 7px;
+    padding:6px;
+}
+.searching input{
+    border-radius: 6px;
+}
+.bi{
+    font-size: 21px;
+}

@@ -1,0 +1,31 @@
+<p>user-list works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">created Account</th>
+        <th scope="col">address</th>
+        <th scope="col">actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList;let i=index;">
+        <ng-container *ngIf="user.email!='ADMIN'">
+          <th scope="row">{{i+1}}</th>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.created}}</td>
+          <td></td>
+          <td>
+            <button class="ms-2 btn btn-danger btn-sm" (click)="deleteUser(user._id)">delete</button>
+            <button class="ms-2 btn btn-info btn-sm">edit</button>
+          </td>
+
+        </ng-container>
+      
+      </tr>
+ 
+    </tbody>
+  </table>

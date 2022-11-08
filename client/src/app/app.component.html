@@ -1,0 +1,44 @@
+
+<nav class="navbar navbar-dark bg-main">
+    <div class="container-fluid">
+        <div class="navbar-brand" routerLink="/user-dashboard"><a >Furniture Mart</a></div>
+        <div class="searching" *ngIf="istoken">
+            <input type="text" class="ps-2" placeholder="Search Furnitures">
+            <button>Search</button>
+        </div>
+        <ng-container *ngIf="checkstring !='admin'">
+            <div class="links">
+                <ul >
+                    <li><a routerLink="/user-dashboard" class="me-5" *ngIf="istoken">{{data.loginUserDetails.name}}</a></li>
+                   
+                    <li><a routerLink="/user-myorder" *ngIf="istoken">MyOrder</a></li>
+                    <li><a routerLink="/user-mycart" *ngIf="istoken"><i class="bi bi-cart3 ms-3 mb-"></i><small class="bg-danger">{{count}}</small></a></li>
+                    <li><a routerLink="/signin" *ngIf="!istoken" >Signin</a></li>
+                    <li><a routerLink="/signup" *ngIf="!istoken">Signup</a></li>
+                    <li><a (click)="logout()" *ngIf="istoken">Logout</a></li>
+                </ul>
+            </div>
+           
+        </ng-container>
+
+       
+        <ng-container *ngIf="checkstring =='admin'">
+            <div class="links">
+                <ul >
+                    <li><a routerLink="/admin-dashboard">ADMIN</a></li>
+                    <li><a routerLink="/admin/products">products</a></li>
+                    <li><a routerLink="/admin/user-list">Users</a></li>
+                    <li><a routerLink="/admin/order">Orders</a></li>
+                    <li><a  (click)="logout()">Logout</a></li>
+                  
+
+                    <!-- <li><a href=""routerLink="/signin">Signin</a></li>
+                    <li><a href=""routerLink="/signup">Signup</a></li> -->
+                </ul>
+    
+            </div> 
+        </ng-container>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>

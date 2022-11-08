@@ -1,0 +1,32 @@
+.tot .card{
+    position: absolute;
+    top:200px;
+    right:80px;
+    height:140px;
+    width:300px;
+}
+.emptytxt{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.one{
+    font-size: 75px;
+
+}
+.two{
+    font-size: 65px;
+
+}
+.three{
+    font-size: 53px;
+
+}
+.four{
+    font-size: 43px;
+
+}
+.five{
+    font-size: 30px;
+
+}

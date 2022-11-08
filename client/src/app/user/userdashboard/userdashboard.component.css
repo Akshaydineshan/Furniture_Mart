@@ -1,0 +1,9 @@
+.card:hover{
+    width:358px;
+    height:350px;
+}
+.card{
+    width: 350px;
+    height:340px;
+    transition: 0.9s;
+}
