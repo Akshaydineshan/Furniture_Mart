@@ -11,10 +11,14 @@ export class DataService {
   selectedItem: any
   selectProduct: any
   countCartItem: any
+  // searchValue=new BehaviorSubject('')
+  
+  orderList:any
   inLoginUser=new BehaviorSubject(false)
 
   constructor(private rest: RestApiService) {
-    console.log("service data", this.loginUserDetails);
+   
+    
 
   }
   async getProfile() {
@@ -40,7 +44,36 @@ export class DataService {
     const data: any = await this.rest.get(`http://localhost:3000/api/user/singleproduct/${item}`)
 
     this.selectProduct = data.data
-    console.log(this.selectProduct);
+    console.log("a",this.selectProduct);
+
+  }
+
+  async addOrder(item:any){
+
+     
+    // for(let i=0;i<item.length;i++){
+      const data:any =await this.rest.post('http://localhost:3000/api/user/order',item)
+      console.log("order post ",data);
+      
+
+    // }
+   
+  }
+
+
+  async getOrders(){
+    try{
+     const data:any= await this.rest.get(`http://localhost:3000/api/user/vieworders/${this.loginUserDetails._id}`)
+
+     this.orderList =data.orders
+     console.log("order",this.orderList);
+     
+     
+
+    }catch(error){
+      console.log(error);
+      
+    }
 
   }
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RestApiService } from '../services/rest-api.service';
 
@@ -11,10 +11,10 @@ import { RestApiService } from '../services/rest-api.service';
 })
 export class SignupComponent implements OnInit {
   RegForm: any = this.fb.group({
-    name: [''],
-    email: [''],
-    cpassword: [''],
-    password: [''],
+    name: ['',[Validators.required]],
+    email: ['',[Validators.required]],
+    cpassword: ['',[Validators.required,Validators.minLength(6)]],
+    password: ['',[Validators.required,Validators.minLength(6)]],
 
   })
 
@@ -44,6 +44,11 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem("token")){
+      this.router.navigateByUrl('user-dashboard')
+    }
+    console.log(this.RegForm);
+    
   }
 
 }

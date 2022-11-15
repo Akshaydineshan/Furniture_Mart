@@ -11,10 +11,16 @@ import { RestApiService } from 'src/app/services/rest-api.service';
 export class UserdashboardComponent implements OnInit {
   name: any
   furnitures: any
+  value:any;
 
-  constructor(private data: DataService, private rest: RestApiService, private router: Router) { }
+  constructor(private data: DataService, private rest: RestApiService, private router: Router) {
+
+   }
 
   ngOnInit(): void {
+    // console.log("dddddddddddd",this.data.searchValue);
+    
+    // this.value=this.data.searchValue
     this.getProduct()
     this.name = this.data.loginUserDetails
   }

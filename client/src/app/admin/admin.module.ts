@@ -8,6 +8,8 @@ import { OrderComponent } from './order/order.component';
 import { ProductsComponent } from './products/products.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+
 
 
 
@@ -17,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddProductComponent,
     OrderComponent,
     ProductsComponent,
-    UserListComponent
+    UserListComponent,
+    UpdateproductComponent,
+   
   ],
   imports: [
     CommonModule,

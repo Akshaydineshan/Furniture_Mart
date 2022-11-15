@@ -1,21 +1,36 @@
-<p>order works!</p>
-<table class="table">
+<div class="container">
+  <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">s/no</th>
+        <th scope="col">Order id</th>
+        <th scope="col">User id</th>
+        <th scope="col">Product id</th>
+        <th scope="col">image</th>
+        <th scope="col">product name</th>
+        <th scope="col">op</th>
+        <!-- <th scope="col">produ</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let item of allOrders;let i=index;" (click)="orderDetails(item)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item._id}}</td>
+        <td>{{item.user}}</td>
+        <td>{{item.productid}}</td>
+        <td><img style="width:120px;height:90px;" src={{item.productimage}} alt=""></td>
+
+        <td>{{item.productname}}</td>
+        <td>
+          <div class="btn btn-primary">Accept</div>
+        </td>
+
+
+
       </tr>
-      
+
 
     </tbody>
   </table>
+
+</div>

@@ -25,6 +25,10 @@ router.post("/addcart",userController.addCart)
 router.get("/viewcart/:id",userController.viewCart)
 router.get('/singleproduct/:id',userController.getSingleProduct)
 router.delete('/cart-item-delete/:id',userController.cartItemDelete)
+router.post('/order',userController.order)
+router.get('/vieworders/:id',userController.viewOrders)
+router.get('/vieworderproduct/:id',userController.viewOrderProduct)
+router.delete('/cancelorder/:id',userController.cancelOrder)
 
 
 

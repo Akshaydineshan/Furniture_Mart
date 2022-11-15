@@ -1,4 +1,81 @@
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div style="height:100vh;" class="px-4  px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)" style="margin-top: -50px;">
+        <div class="container ">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" >
+                    <h1 class="cd" class="my-5 display-3 fw-bold ls-tight">
+                        Welcome to <br />
+                        <span class="text-primary">Furniture Mart</span>
+                    </h1>
+                    <p style="color: hsl(217, 10%, 50.8%)">
 
+
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card"  style="margin-top:55px;">
+                        <div class="card-body  py-3 px-md-3">
+                            <form [formGroup]="LoginForm" (ngSubmit)="login()">
+                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                             
+
+                                <!-- Email input -->
+                                <div class="form-outline mb-1">
+                                    <input type="text" name="" class="form-control" id="" placeholder="Email"
+                                        formControlName="email">
+                                    <label class="form-label ms-2" for="form3Example3">Email address</label>
+                                    <div *ngIf="!LoginForm.controls.email.valid && LoginForm.controls.email.dirty" class="ms-2   text-danger" style="font-size:15px;">
+                                        <label class="form-label " for="form3Example3">
+                                          Invalid Email
+                                        </label>
+                                       </div>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-1">
+                                    <input type="password" name="" class="form-control" id="" placeholder="Password"
+                                        formControlName="password">
+                                    <label class="form-label ms-2" for="form3Example4">Password</label>
+                                    <div *ngIf="!LoginForm.controls.password.valid && LoginForm.controls.password.dirty" class="ms-2   text-danger" style="font-size:15px;">
+                                        <label class="form-label " for="form3Example3">
+                                          Invalid Password
+                                        </label>
+                                       </div>
+                                </div>
+
+
+
+
+                                <!-- Submit button -->
+                                <button [disabled]="!LoginForm.valid" type="submit" class="form-control btn btn-outline-primary mt-2">Signin</button>
+
+
+                                 <div class="mt-3">
+                                    <span>Create Account<a class="ms-2" style="text-decoration:none;" routerLink="/signup">Signup</a></span>
+                                 </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+
+
+
+
+
+
+
+
+<!-- 
 <div class="container ">
     <form [formGroup]="LoginForm" (ngSubmit)="login()">
         <div class="header text-center"><h4>Signup</h4></div>
@@ -13,5 +90,4 @@
              <button type="submit" class="form-control">Signin</button>
         </div>
     </form>
-</div>
-
+</div>  -->

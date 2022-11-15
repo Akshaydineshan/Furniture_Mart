@@ -16,7 +16,8 @@ export class AddProductComponent implements OnInit {
     category: [''],
     image: [''],
     status: [''],
-    prize: ['']
+    prize: [''],
+   
 
   })
 

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { RestApiService } from 'src/app/services/rest-api.service';
@@ -11,7 +12,8 @@ export class MycartComponent implements OnInit {
   cartItem:any
   carts:any
   total:Number=0
-  constructor(private data:DataService,private rest:RestApiService) { }
+  qty:String='1'
+  constructor(private data:DataService,private rest:RestApiService,private router:Router) { }
 
   ngOnInit(): void {
    this.getCartItems()
@@ -42,6 +44,23 @@ export class MycartComponent implements OnInit {
   async deleteCart(id:any){
       await this.rest.delete(`http://localhost:3000/api/user/cart-item-delete/${id}`)
       this.getCartItems()
+  }
+
+
+
+  async checkout(item:any){
+    if(confirm("Are you sure to buy this product?")){
+      console.log("checkout click",item);
+      await this.data.addOrder(item)
+      await this.deleteCart(item[0]._id)
+      this.router.navigateByUrl('user-myorder')
+
+    }
+  
+
+    // await this.rest
+
+    
   }
 
 }

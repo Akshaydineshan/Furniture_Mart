@@ -51,7 +51,7 @@
 
                     <div class="col-md-2">
                         <div class=""><label for="">Quantity <input class="form-control"
-                                    style="width:65px; height:25px;" type="number" name="" id=""></label></div>
+                                    style="width:65px; height:25px;" type="number" [(ngModel)]="qty" name="" id=""></label></div>
 
                     </div>
 
@@ -73,7 +73,7 @@
         <div class="  tot ">
             <div class="card text-center p-2">
                 <h5>Total Price</h5><span style="color:red;">{{total}}</span>
-                <button class="btn btn-warning color:white " style="margin-top:24px;">Checkout</button>
+                <button class="btn btn-warning color:white " style="margin-top:24px;" (click)="checkout(carts)">Checkout</button>
             </div>
         </div>
 

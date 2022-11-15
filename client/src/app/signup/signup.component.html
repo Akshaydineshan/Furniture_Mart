@@ -1,6 +1,118 @@
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div style="height:100vh;" class="px-4  px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)" style="margin-top: -50px;">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Welcome to  <br />
+              <span class="text-primary">Furniture Mart</span>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+             
+             
+            </p>
+          </div>
+  
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card" style="border-radius:9px; margin-top: 54px;">
+              <div class="card-body  ">
+                <form  [formGroup]="RegForm" (ngSubmit)="register()">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-12 mb-2">
+                      <div class="form-outline">
+                        <input type="text" name="" id="" class="form-control" placeholder="Name" formControlName="name">
+                        <label class="form-label ms-2" for="form3Example1">Name</label>
+                        <div *ngIf="!RegForm.controls.name.valid && RegForm.controls.name.dirty" class="ms-2   text-danger" style="font-size:15px;">
+                          <label class="form-label " for="form3Example3">
+                            Invalid Name
+                          </label>
+                         </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+  
+                  <!-- Email input -->
+                  <div class="form-outline mb-1">
+                    <input type="text" name="" id="" class="form-control" placeholder="Email" formControlName="email">
+                    <label class="form-label ms-2" for="form3Example3">Email address</label>
+                     
+                    <div *ngIf="!RegForm.controls.email.valid && RegForm.controls.email.dirty" class="ms-2 text-danger" style="font-size:15px;">
+                      <label class="form-label " for="form3Example3">
+                        Invalid Email
+                      </label>
+                     </div>
+                  </div>
+  
+                  <!-- Password input -->
+                  <div class="form-outline mb-1">
+                    <input type="password" name="" id="" class="form-control" placeholder="Password" formControlName="password">
+                    <label class="form-label ms-2" for="form3Example4">Password</label>
+                    <div *ngIf="!RegForm.controls.password.valid && RegForm.controls.password.dirty" class="ms-2 text-danger" style="font-size:15px;">
+                      <label class="form-label " for="form3Example3">
+                        invalid! Password must be six charector
+                      </label>
+                     </div>
+                  </div>
+                  <!-- Password input -->
+                  <div class="form-outline mb-1">
+                    <input type="password" name="" id="" class="form-control" placeholder="confirm Password" formControlName="cpassword">
+                    <label class="form-label ms-2" for="form3Example4">Confirm password</label>
+                    <div *ngIf="!RegForm.controls.cpassword.valid && RegForm.controls.cpassword.dirty" class="ms-2 text-danger " style="font-size:15px;">
+                      <label class="form-label " for="form3Example3">
+                        invalid! Password must be six charector
+                      </label>
+                     </div>
+                  </div>
+  
+                
+  
+                  <!-- Submit button -->
+                    
+                  <!-- [disabled]="!RegForm.valid" -->
+                    
+                  <button [disabled]="!RegForm.valid" class="form-control btn btn-outline-primary"  type="submit">Sign up</button>
+                    
+                  <div class="mt-4">
+                    <span>Already have an account?<a class="ms-2" style="text-decoration:none;" routerLink="/signin">Signin</a></span>
+                 </div>
+
+  
+            
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
 
 <div class="container ">
-    <form [formGroup]="RegForm" (ngSubmit)="register()">
+   <form [formGroup]="RegForm" (ngSubmit)="register()">
         <div class="header text-center"><h4>Signup</h4></div>
         <div class="inp-item mt-2">
             <input type="text" name="" id="" class="form-control" placeholder="Name" formControlName="name">
@@ -19,4 +131,9 @@
              <button class="form-control" type="submit">Signup</button>
         </div>
     </form>
-</div>
+
+
+
+    
+
+</div> -->

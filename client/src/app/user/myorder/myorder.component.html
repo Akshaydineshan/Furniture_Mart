@@ -1,1 +1,64 @@
-<p>myorder works!</p>
+<div class="containers " >
+     <ng-container>
+        <label *ngIf="data.orderList==''" style="font-size:28px;" class="mt-3 ms-3" for="">No item odered</label>
+     </ng-container>
+     <ng-container>
+        <label *ngIf="data.orderList!=''" style="font-size:28px;" class="mt-3 ms-3" for="">My orders</label>
+     </ng-container>
+
+    <ng-container *ngIf="data.orderList ==''">
+        <div class="container" >
+           
+            <div class="emptytxt mt-3">
+              
+                    <span><i class="bi bi-star-fill one me-3" ></i></span>
+                    <span><i class="bi bi-star-fill two me-3"></i></span>
+                    <span><i class="bi bi-star-fill three me-3"></i></span>
+                    <span><i class="bi bi-star-fill four me-3"></i></span>
+                    <span><i class="bi bi-star-fill five me-3"></i></span>
+              
+                
+            </div>
+           
+        </div>
+
+    </ng-container>
+
+
+ 
+    <ng-container *ngFor="let item of data.orderList"  >
+       
+        <div class="row border mt-3">
+            <div class="col-md-2">
+                <img  style=" width:140px; height:120px;"src={{item.productimage}} alt="">
+            </div>
+    
+            <div class="col-md-2 text-center">
+                <div>Order Id</div>
+                  <div class="mt-2"><label for="">{{item._id}}</label></div>
+            </div>
+
+            <div class="col-md-2 text-center">
+                <div >product name</div>
+                  <div class="mt-2"><label for="">{{item.productname}}</label></div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div >price</div>
+                  <div class="mt-2"><label for="">{{item.productprice}}</label></div>
+            </div>
+            <div class="col-md-1 text-center">
+                <div >staus</div>
+                  <div class="mt-2"><label for="">{{item.orderstatus}}</label></div>
+            </div>
+
+            <div class="col-md-2 text-center">
+               
+                  <div class="mt-3"><div class="btn btn-danger btn-sm" (click)="cancelOrder(item._id)">cancel order</div></div>
+            </div>
+        
+    
+        </div>
+
+    </ng-container>
+  
+</div>

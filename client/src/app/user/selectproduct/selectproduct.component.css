@@ -1,0 +1,11 @@
+.m:hover{
+    transform: scale(1.5);
+}
+.m{
+    border:4px solid white;
+    border-radius: 3px;
+}
+.dv:hover{
+    transform: scale(1.05);
+
+}

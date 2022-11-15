@@ -9,6 +9,7 @@ import { RestApiService } from './services/rest-api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent   {
+
   checkstring: String = "user"
   istoken: Boolean = false
   count:any;
@@ -16,7 +17,10 @@ export class AppComponent   {
   constructor(public data: DataService, public router: Router, private rest: RestApiService) {
 
     this.data.getProfile()
-    this.cartCount()
+    // setTimeout(()=>{
+      this.cartCount()
+    // },1600)
+    // this.cartCount()
    
 
 
@@ -54,10 +58,11 @@ export class AppComponent   {
 
   }
   async cartCount() {
+     await this.data.getProfile()
     console.log("inside cartcount");
     console.log("jhjj", this.data.loginUserDetails);
 
-    const data: any = await this.rest.get(`http://localhost:3000/api/user/viewcart/636787ca695eb10b8c48ff7d`)
+    const data: any = await this.rest.get(`http://localhost:3000/api/user/viewcart/${this.data.loginUserDetails._id}`)
     console.log("ffffffffff", data);
      this.count=data.data.length
 
@@ -66,6 +71,16 @@ export class AppComponent   {
 
 
   title = 'client';
+
+
+
+  // typeValue(){
+  //   console.log("value typed",this.searchValue);
+    
+  //   this.data.searchValue.next(this.searchValue)
+  //   console.log(this.data.searchValue);
+    
+  // }
 
 
 

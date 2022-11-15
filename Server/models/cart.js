@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const cartSchema = mongoose.Schema({
+    productid:{type:mongoose.Schema.Types.ObjectId},
     title: { type: String },
     description: { type: String },
     category: { type: String },

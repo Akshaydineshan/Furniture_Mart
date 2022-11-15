@@ -1,9 +1,10 @@
 .card:hover{
-    width:358px;
-    height:350px;
+    /* width:358px;
+    height:350px; */
+    transform: scale(1.06);
 }
 .card{
     width: 350px;
     height:340px;
-    transition: 0.9s;
+    transition: 0.3s;
 }

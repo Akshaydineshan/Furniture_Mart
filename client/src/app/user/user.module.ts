@@ -29,7 +29,7 @@ import { SelectproductComponent } from './selectproduct/selectproduct.component'
   exports:[
     UserdashboardComponent,
     MyorderComponent,
-    MyorderComponent
+  
    
   
   ]

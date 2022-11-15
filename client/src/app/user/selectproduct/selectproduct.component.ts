@@ -9,16 +9,20 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SelectproductComponent implements OnInit {
 selectedProduct:any
+qty:any
   constructor(private data:DataService,private router:Router) { }
 
   ngOnInit(): void {
     this.selectedProduct=this.data.selectProduct
-    console.log('hjhj',this.selectedProduct);
+    console.log('selected click',this.selectedProduct);
     
   }
 
   
   addToCart(item: any) {
+    console.log("inside add cart",item);
+    // item['prize'] =
+    
     this.data.setCart(item)
 
 

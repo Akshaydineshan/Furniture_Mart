@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { async } from '@angular/core/testing';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { RestApiService } from '../services/rest-api.service';
@@ -14,14 +14,19 @@ export class SigninComponent implements OnInit {
 
   LoginForm: any = this.fb.group({
 
-    email: [''],
+    email: ['',[Validators.required,Validators.email]],
 
-    password: [''],
+    password: ['',[Validators.required,Validators.minLength(6)]],
 
   })
   constructor(private fb: FormBuilder, private rest: RestApiService,private router:Router,private dataS:DataService) { }
 
   ngOnInit(): void {
+    console.log(this.LoginForm);
+    
+    if(localStorage.getItem("token")){
+      this.router.navigateByUrl('user-dashboard')
+    }
   }
 
 

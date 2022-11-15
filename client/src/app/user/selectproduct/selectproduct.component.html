@@ -1,14 +1,14 @@
 <div class="container-fluid">
     <div class="row mt-4">
        <div class="col-md-3">
-            <img  style="width:350px;" src="{{selectedProduct.image}}" alt="">
+            <img style="border:2px white;"  class="m" style="width:350px;" src="{{selectedProduct.image}}" alt="">
             
        </div>
 
        <div class="col-md-5 ms-4">
         <div class="row"><h4>{{selectedProduct.title}}</h4></div>
-        <div class="row">{{selectedProduct.description}}</div>
-        <div class="row">{{selectedProduct.category}}</div>
+        <div class="row dv"><span style="font-size:16px;">Description:</span><span>{{selectedProduct.description}}</span></div>
+        <!-- <div ><span >Category:</span><span>{{selectedProduct.category}}</span></div> -->
     </div>
 
        <div class="col-md-3">
@@ -16,7 +16,11 @@
             <div class="card-body x">
                 <div >status<span [ngStyle]="{'color':selectedProduct.status == 'Available'?'green':'red'}" >{{selectedProduct.status}}</span></div>
                 <div class="">Price:{{selectedProduct.prize}}</div>
-                <button style=" color:white" class="btn btn-warning form-control " (click)="addToCart(selectedProduct)">ADD To Cart</button>
+                <!-- <div style="display:flex;justify-content:center;">
+                    <input style="width:65px; height:25px;" type="number" [(ngModel)]= "qty" class=" form-control"name="" id="">
+                </div> -->
+              
+                <button style=" color:white" class="btn btn-warning form-control mt-4 " (click)="addToCart(selectedProduct)">ADD To Cart</button>
 
 
 

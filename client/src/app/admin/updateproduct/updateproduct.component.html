@@ -1,0 +1,39 @@
+
+<div class="container  mt-5">
+    <form [formGroup]="EditFurnitures" (ngSubmit)="editFurnitures()" class="w-50 ">
+        <div class="header text-center"><h4>Update Furnitures</h4></div>
+        <div class="inp-item mt-2">
+            <input type="text" name="" id="" class="form-control" placeholder="Title" formControlName="title">
+        </div>
+        <div class="inp-item mt-2">
+            <input type="text" name="" id="" class="form-control" placeholder="Description" formControlName="description">
+        </div>
+        <div class="inp-item mt-2">
+            <select type="text" name="" id="" class="form-control"  formControlName="category">
+                <option value="">Select Category-----</option>
+                <option value="Sofas">Sofas</option>
+                <option value="Bed">Bed</option>
+                <option value="Table">Table</option>
+                <option value="StudyDesk">Study Desk</option>
+                <option value="OfficeChair">Office chair</option>
+                <option value="BeanBags">Bean bags</option>
+            </select>
+        </div>
+        <div class="inp-item mt-2">
+            <input type="text" name="" id="" class="form-control" placeholder="Image" formControlName="image">
+        </div>
+        <div class="inp-item mt-2">
+            <select type="text" name="" id="" class="form-control"  formControlName="status">
+                     <option value="">Select Status Of product ---------</option>
+                     <option value="Available">Available</option>
+                     <option value="Outofstock">Outofstock</option>
+            </select>
+        </div>
+        <div class="inp-item mt-2">
+            <input type="text" name="" id="" class="form-control" placeholder="Prize" formControlName="prize">
+        </div>
+        <div class="form-btn mt-4 ">
+             <button class="form-control" type="submit">Update</button>
+        </div>
+    </form>
+</div>

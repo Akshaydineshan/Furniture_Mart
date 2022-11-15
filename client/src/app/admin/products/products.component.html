@@ -25,8 +25,8 @@
         <td>{{item.status}}</td>
         <td>{{item.prize}}</td>
         <td>
-          <span><button class="btn btn-outline-danger btn-sm">Delete</button></span>
-          <span> <button class="btn btn-outline-primary ms-2 btn-sm ">Edit</button></span>
+          <span><button class="btn btn-outline-danger btn-sm" (click)="delete(item._id)">Delete</button></span>
+          <span> <button class="btn btn-outline-primary ms-2 btn-sm " [routerLink]="['/admin/update-product',item._id]">Edit</button></span>
          
         </td>
        

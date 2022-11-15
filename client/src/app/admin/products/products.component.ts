@@ -30,4 +30,16 @@ export class ProductsComponent implements OnInit {
 
   }
 
+  async delete(id:any){
+    console.log(id);
+    if(confirm("are you sure to delete")){
+      const delp:any=await this.rest.delete(`http://localhost:3000/api/admin/deleteproduct/${id}`)
+      console.log("delp",delp);
+      
+
+    }
+    
+   
+  }
+
 }
